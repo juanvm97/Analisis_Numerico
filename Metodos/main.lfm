@@ -1,0 +1,295 @@
+object Form1: TForm1
+  Left = 129
+  Height = 563
+  Top = 97
+  Width = 1035
+  Caption = 'Form1'
+  ClientHeight = 563
+  ClientWidth = 1035
+  OnCreate = FormCreate
+  OnDestroy = FormDestroy
+  LCLVersion = '1.8.2.0'
+  object Chart1: TChart
+    Left = 448
+    Height = 476
+    Top = 87
+    Width = 587
+    AxisList = <    
+      item
+        Grid.Color = clSilver
+        Marks.LabelBrush.Style = bsClear
+        Minors = <>
+        Title.LabelFont.Orientation = 900
+        Title.LabelBrush.Style = bsClear
+      end    
+      item
+        Grid.Color = clSilver
+        Alignment = calBottom
+        Marks.LabelBrush.Style = bsClear
+        Minors = <>
+        Title.LabelBrush.Style = bsClear
+      end>
+    BackColor = clWhite
+    Extent.UseXMax = True
+    Extent.UseXMin = True
+    Extent.UseYMax = True
+    Extent.UseYMin = True
+    Extent.XMax = 5
+    Extent.XMin = -5
+    Extent.YMax = 25
+    Extent.YMin = -6
+    Foot.Brush.Color = clBtnFace
+    Foot.Font.Color = clBlue
+    Title.Brush.Color = clBtnFace
+    Title.Font.Color = clBlue
+    Title.Text.Strings = (
+      'TAChart'
+    )
+    Align = alClient
+    object Chart1LineSeries1: TLineSeries
+      LinePen.Color = clRed
+      Pointer.Pen.Color = clRed
+      Pointer.Pen.Width = 2
+      Pointer.Style = psCircle
+      ShowPoints = True
+    end
+    object Chart1FuncSeries1: TFuncSeries
+      Active = False
+      OnCalculate = Chart1FuncSeries1Calculate
+      Pen.Color = clBlue
+    end
+    object Chart1ConstantLine1: TConstantLine
+      LineStyle = lsVertical
+      Pen.Color = clGray
+      Position = 0
+    end
+    object Chart1ConstantLine2: TConstantLine
+      Pen.Color = clGray
+      Position = 0
+    end
+  end
+  object Panel2: TPanel
+    Left = 0
+    Height = 87
+    Top = 0
+    Width = 1035
+    Align = alTop
+    ClientHeight = 87
+    ClientWidth = 1035
+    TabOrder = 1
+    object Execute: TButton
+      Left = 744
+      Height = 25
+      Top = 48
+      Width = 83
+      Caption = 'Execute'
+      OnClick = ExecuteClick
+      TabOrder = 0
+    end
+    object ediError: TEdit
+      Left = 760
+      Height = 23
+      Top = 16
+      Width = 80
+      TabOrder = 1
+      Text = '0.00001'
+    end
+    object lblError: TLabel
+      Left = 728
+      Height = 15
+      Top = 16
+      Width = 25
+      Caption = 'Error'
+      ParentColor = False
+    end
+    object ediB: TEdit
+      Left = 576
+      Height = 23
+      Top = 48
+      Width = 80
+      TabOrder = 2
+      Text = '3'
+    end
+    object Label2: TLabel
+      Left = 560
+      Height = 15
+      Top = 50
+      Width = 10
+      Caption = 'b:'
+      ParentColor = False
+    end
+    object ediA: TEdit
+      Left = 576
+      Height = 23
+      Top = 15
+      Width = 80
+      TabOrder = 3
+      Text = '1.5'
+    end
+    object Label1: TLabel
+      Left = 560
+      Height = 15
+      Top = 16
+      Width = 12
+      Caption = 'a: '
+      ParentColor = False
+    end
+    object Label5: TLabel
+      Left = 20
+      Height = 15
+      Top = 23
+      Width = 43
+      Caption = 'Función'
+      ParentColor = False
+    end
+    object ediF: TEdit
+      Left = 20
+      Height = 23
+      Top = 50
+      Width = 104
+      TabOrder = 4
+      Text = 'x^2 -4'
+    end
+    object Label6: TLabel
+      Left = 264
+      Height = 15
+      Top = 23
+      Width = 45
+      Caption = 'Metodo:'
+      ParentColor = False
+    end
+    object cboFunctions: TComboBox
+      AnchorSideLeft.Side = asrBottom
+      AnchorSideTop.Side = asrCenter
+      Left = 264
+      Height = 23
+      Top = 50
+      Width = 110
+      BorderSpacing.Left = 6
+      ItemHeight = 15
+      Style = csDropDownList
+      TabOrder = 5
+    end
+    object Label7: TLabel
+      Left = 144
+      Height = 15
+      Top = 23
+      Width = 49
+      Caption = 'Derivada:'
+      ParentColor = False
+    end
+    object ediD: TEdit
+      Left = 144
+      Height = 23
+      Top = 50
+      Width = 104
+      TabOrder = 6
+      Text = '2*x'
+    end
+    object Label8: TLabel
+      Left = 400
+      Height = 15
+      Top = 23
+      Width = 21
+      Caption = 'X_0:'
+      ParentColor = False
+    end
+    object ediX_0: TEdit
+      Left = 424
+      Height = 23
+      Top = 23
+      Width = 80
+      TabOrder = 7
+      Text = '1.5'
+    end
+  end
+  object Panel1: TPanel
+    Left = 0
+    Height = 476
+    Top = 87
+    Width = 448
+    Align = alLeft
+    Caption = 'Panel1'
+    ClientHeight = 476
+    ClientWidth = 448
+    TabOrder = 2
+    object Panel3: TPanel
+      Left = 1
+      Height = 90
+      Top = 385
+      Width = 446
+      Align = alBottom
+      BevelInner = bvRaised
+      BevelOuter = bvLowered
+      ClientHeight = 90
+      ClientWidth = 446
+      TabOrder = 0
+      object Label3: TLabel
+        Left = 16
+        Height = 15
+        Top = 12
+        Width = 27
+        Caption = 'Raiz: '
+        ParentColor = False
+      end
+      object lblRoot: TLabel
+        Left = 56
+        Height = 15
+        Top = 12
+        Width = 5
+        Caption = '-'
+        ParentColor = False
+      end
+      object Label4: TLabel
+        Left = 16
+        Height = 15
+        Top = 36
+        Width = 60
+        Caption = 'Iteraciones:'
+        ParentColor = False
+      end
+      object lblIteracionse: TLabel
+        Left = 80
+        Height = 15
+        Top = 36
+        Width = 5
+        Caption = '-'
+        ParentColor = False
+      end
+    end
+    object StringGrid1: TStringGrid
+      Left = 1
+      Height = 384
+      Top = 1
+      Width = 446
+      Align = alClient
+      AlternateColor = 16579836
+      AutoFillColumns = True
+      ColCount = 3
+      Columns = <      
+        item
+          Alignment = taCenter
+          Title.Caption = 'N'
+          Width = 148
+        end      
+        item
+          Alignment = taRightJustify
+          Title.Caption = 'Xn'
+          Width = 148
+        end      
+        item
+          Alignment = taRightJustify
+          Title.Caption = 'Error'
+          Width = 149
+        end>
+      FixedCols = 0
+      Flat = True
+      TabOrder = 1
+      ColWidths = (
+        148
+        148
+        149
+      )
+    end
+  end
+end
